@@ -91,7 +91,6 @@ with fewer defendants receiving the highest scores.
 ## Exercises 4
 
 ``` r
-# Refactor age_cat for proper ordering
 compas <- compas %>%
   mutate(
     age_cat = factor(age_cat,
@@ -109,7 +108,7 @@ ggplot(compas, aes(x = race, fill = sex)) +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 ```
 
-![](lab-09_files/figure-gfm/ex4-demographics-1.png)<!-- -->
+![](lab-09_files/figure-gfm/ex4-1.png)<!-- -->
 
 ``` r
 # sex
@@ -119,7 +118,7 @@ ggplot(compas, aes(x = sex)) +
   theme_minimal()
 ```
 
-![](lab-09_files/figure-gfm/ex4-demographics-2.png)<!-- -->
+![](lab-09_files/figure-gfm/ex4-2.png)<!-- -->
 
 ``` r
 # age category
@@ -129,7 +128,7 @@ ggplot(compas, aes(x = age_cat)) +
   theme_minimal()
 ```
 
-![](lab-09_files/figure-gfm/ex4-demographics-3.png)<!-- -->
+![](lab-09_files/figure-gfm/ex4-3.png)<!-- -->
 
 ``` r
 # Combined visualization
@@ -146,7 +145,7 @@ ggplot(compas, aes(fill = age_cat, x = sex)) +
   ))
 ```
 
-![](lab-09_files/figure-gfm/ex4-demographics-4.png)<!-- -->
+![](lab-09_files/figure-gfm/ex4-4.png)<!-- -->
 
 ## Exercises 5
 
@@ -172,7 +171,7 @@ ggplot(recid_by_score, aes(x = decile_score, y = recid_rate)) +
   theme_minimal()
 ```
 
-![](lab-09_files/figure-gfm/ex5-score-recid-1.png)<!-- -->
+![](lab-09_files/figure-gfm/ex5-1.png)<!-- -->
 
 Yes, higher risk scores do correspond to higher recidivism rates.
 Recidivism rate generally increases with the decile score. This suggests
@@ -256,7 +255,7 @@ ggplot(compas_br, aes(x = decile_score, fill = race)) +
   theme_minimal()
 ```
 
-![](lab-09_files/figure-gfm/ex8-score-by-race-1.png)<!-- -->
+![](lab-09_files/figure-gfm/ex8-1.png)<!-- -->
 
 There is a clear difference in the distributions. Black defendants are
 more evenly spread across the risk score range and receive higher scores
