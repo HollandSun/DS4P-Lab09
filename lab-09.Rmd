@@ -63,8 +63,7 @@ ggplot(compas, aes(x = decile_score)) +
 The distribution of COMPAS risk scores is right-skewed, with a large proportion of defendants receiving lower scores (1-3). This suggests the algorithm classifies the majority of defendants as relatively low risk, with fewer defendants receiving the highest scores.
 
 ## Exercises 4
-```{r ex4-demographics}
-# Refactor age_cat for proper ordering
+```{r ex4}
 compas <- compas %>%
   mutate(
     age_cat = factor(age_cat,
@@ -108,7 +107,7 @@ ggplot(compas, aes(fill = age_cat, x = sex)) +
 ```
 
 ## Exercises 5
-```{r ex5-score-recid}
+```{r ex5}
 recid_by_score <- compas %>%
   group_by(decile_score) %>%
   summarise(
@@ -153,7 +152,7 @@ compas %>%
 ```
 
 ## Exercises 7
-```{r ex7-accuracy}
+```{r ex7}
 classified <- compas %>%
   filter(compas_classification != "Unclassified")
 
@@ -170,7 +169,7 @@ accuracy
 Among the classified cases (those with scores <= 4 or >= 7), the overall accuracy is approximately `r round(accuracy$accuracy * 100, 1)`%. This means the COMPAS algorithm makes the correct prediction for roughly half of the clear-cut cases. (but still having a huge false rate. so It only may server as a reference)
 
 ## Exercises 8
-```{r ex8-score-by-race}
+```{r ex8}
 compas_br <- compas %>%
   filter(race %in% c("African-American", "Caucasian"))
 
